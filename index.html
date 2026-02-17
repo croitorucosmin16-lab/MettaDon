@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Croitoru Cosmin | Portofoliu Profesional</title>
+  <title>Cosmin Croitoru | Portofoliu Profesional</title>
   <style>
     :root {
       --primary: #1e293b;
@@ -13,6 +13,7 @@
       --shadow: rgba(0, 0, 0, 0.7);
       --hover: #475569;
       --glow: 0 0 15px rgba(96, 165, 250, 0.5);
+      --border: 1px solid rgba(96, 165, 250, 0.3);
     }
 
     * {
@@ -39,7 +40,7 @@
       padding: 30px;
     }
 
-    header {
+    .header-sigla {
       text-align: center;
       padding: 40px 20px;
       background: rgba(0, 0, 0, 0.3);
@@ -50,24 +51,40 @@
       animation: fadeInUp 1s ease-out;
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .sigla {
+      font-size: 2.8rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: var(--accent);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      position: relative;
+      display: inline-block;
+    }
+
+    .sigla::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: var(--accent);
+      margin: 15px auto;
+      border-radius: 3px;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-top: 10px;
+      font-style: italic;
     }
 
     .profile-pic {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid var(--accent);
-      margin-bottom: 20px;
+      border: 2px solid var(--accent);
+      margin: 20px auto;
       box-shadow: var(--glow);
       transition: transform 0.4s ease;
     }
@@ -77,18 +94,12 @@
       box-shadow: 0 0 25px rgba(96, 165, 250, 0.8);
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: var(--accent);
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-
     h2 {
       font-size: 1.8rem;
       margin: 30px 0 15px;
       color: var(--accent);
       position: relative;
+      text-align: center;
     }
 
     h2::after {
@@ -97,7 +108,7 @@
       width: 50px;
       height: 3px;
       background: var(--accent);
-      margin-top: 10px;
+      margin: 10px auto;
       border-radius: 3px;
     }
 
@@ -132,6 +143,32 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .timeline-item {
+      background: rgba(51, 65, 85, 0.3);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border-left: 4px solid var(--accent);
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateX(5px);
+      background: rgba(51, 65, 85, 0.5);
+    }
+
+    .timeline-date {
+      font-weight: bold;
+      color: var(--accent);
+      font-size: 1.1rem;
     }
 
     .skills {
@@ -196,18 +233,6 @@
       box-shadow: 0 6px 15px rgba(96, 165, 250, 0.5);
     }
 
-    .military-badge {
-      background: linear-gradient(45deg, #dc2626, #991b1b);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: bold;
-      display: inline-block;
-      margin: 10px 0;
-      box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
-    }
-
     .quote {
       font-style: italic;
       font-size: 1.1rem;
@@ -221,7 +246,7 @@
     }
 
     @media (max-width: 768px) {
-      h1 {
+      .sigla {
         font-size: 2rem;
       }
       .container {
@@ -232,49 +257,67 @@
 </head>
 <body>
   <div class="container">
-    <header>
-      <img src="https://via.placeholder.com/150" alt="Croitoru Cosmin" class="profile-pic">
-      <h1>Croitoru Cosmin</h1>
-      <p>Profesionalism • Reziliență • Carismă • Multilingvism • Tehnologie & Securitate</p>
+    <div class="header-sigla">
+      <div class="sigla">Cosmin Croitoru</div>
+      <div class="tagline">Profesionalism • Reziliență • Carismă • Multilingvism • Tehnologie & Securitate</div>
+      <img src="https://via.placeholder.com/120" alt="Cosmin Croitoru" class="profile-pic">
       <a href="https://github.com/croitorucosmin16-lab" target="_blank" class="btn">Vizitează GitHub</a>
-    </header>
+    </div>
 
     <section class="section">
-      <h2>Despre Mine</h2>
-      <p>Născut în 1991 la Vulcan, Hunedoara, am parcurs o cale neconvențională — dar extrem de valoroasă. De la tehnician electric, prin transport internațional, sacrificare animală (cu certificare în calitatea carnea), până la marketing, evenimente publicitare și serviciu militar — fiecare etapă a fost o lecție de adaptabilitate, disciplină și performanță.</p>
-      <p>Am studiat informatica în Franța (Ficus Lyon) și publicitate online (CertiMedia Paris). Vorbesc fluent franceza, spaniola și engleza. Sunt fotogenic, carismatic și îmi place să aduc energie pozitivă în orice echipă.</p>
-      <p>În prezent, caut o nouă provocare în mediul civil — unde pot aduce experiența mea practică, abilitățile tehnice și spiritul de echipă.</p>
+      <h2>Introducere</h2>
+      <p>„O viață trăită pe marginea convenționalului — dar cu un scop clar: performanță, adaptabilitate, valoare. De la Vulcan la Paris, de la abator la armată, de la marketing la securitate — fiecare pas a fost o lecție de caracter. Nu am urcat pe podiumuri, dar am traversat terenuri grele — și am ieșit mai puternic.”</p>
     </section>
 
     <section class="section">
-      <h2>Experiență Profesională</h2>
-      <p><strong>2024 – Prezent:</strong> Marketing & Promovare Evenimente — Artsma Invest S.R.L, Radio România, Tattoo.TV (București)</p>
-      <p>Operator foto/video, podcasturi cu influenceri naționali, promovare afaceri (restaurante, baruri, locații publice).</p>
+      <h2>Experiență Cronologică</h2>
+      <ul class="timeline">
+        <li class="timeline-item">
+          <div class="timeline-date">Ianuarie 2026 – Prezent</div>
+          <p><strong>Marketing & Promovare Evenimente</strong> — Artsma Invest S.R.L, Radio România, Tattoo.TV (București)</p>
+          <p>Operator foto/video, podcasturi cu influenceri naționali, promovare afaceri (restaurante, baruri, locații publice).</p>
+        </li>
 
-      <p><strong>2024 (Aug):</strong> Casier Profi — perioadă scurtă, dar cu feedback pozitiv.</p>
+        <li class="timeline-item">
+          <div class="timeline-date">August 2024</div>
+          <p><strong>Casier Profi</strong> — perioadă scurtă, feedback pozitiv.</p>
+        </li>
 
-      <p><strong>2017–2024:</strong> Operator în abator (ovine, bovine, porcine, animale sălbatice) — Franța</p>
-      <p>Studiu calitate carne, igiena alimentară, formare noi angajați. Am fost recunoscut pentru eficiență și atenție la detaliu.</p>
+        <li class="timeline-item">
+          <div class="timeline-date">Septembrie 2025 – Ianuarie 2026</div>
+          <p><strong>Soldat Gradat Profesionist</strong> — Batalionul Neagoe Basarab 26 Infanterie „Scorpionii Roșii”, Craiova</p>
+          <p>Admis după competiții sportive. Am luat decizia dificilă de a pune capăt serviciului activ pentru a susține fratele meu mai mic în începutul carierei militare și pentru a fi alături de mama mea în momente grele. Acest timp mi-a dat disciplină, răbdare și capacitatea de a lua decizii grele cu responsabilitate.</p>
+        </li>
 
-      <p><strong>2015–2016:</strong> Șofer transport piese prototip — Rac-Transport, Germania</p>
-      <p>Transport piese pentru Mercedes, Porsche, BMW — cu mașină 3,5T. Disciplină, punctualitate, siguranță.</p>
+        <li class="timeline-item">
+          <div class="timeline-date">2017–2024</div>
+          <p><strong>Operator în abator</strong> — Franța</p>
+          <p>Studiu calitate carne, igiena alimentară, formare noi angajați. Recunoscut pentru eficiență și atenție la detaliu.</p>
+        </li>
 
-      <p><strong>2011–2013:</strong> Șofer persoanal + testare autoturisme — AutoTehnic SRL, Arad</p>
-      <p>Range Rover, Hyundai, Ford — verificare vehicule noi pentru vânzare.</p>
+        <li class="timeline-item">
+          <div class="timeline-date">2015–2016</div>
+          <p><strong>Șofer transport piese prototip</strong> — Rac-Transport, Germania</p>
+          <p>Transport piese pentru Mercedes, Porsche, BMW — cu mașină 3,5T. Disciplină, punctualitate, siguranță.</p>
+        </li>
 
-      <p><strong>2011:</strong> Barman — Arad</p>
-      <p>Prima experiență în servicii — comunicare, organizare, atenție la clienți.</p>
+        <li class="timeline-item">
+          <div class="timeline-date">2011–2013</div>
+          <p><strong>Șofer persoanal + testare autoturisme</strong> — AutoTehnic SRL, Arad</p>
+          <p>Range Rover, Hyundai, Ford — verificare vehicule noi pentru vânzare.</p>
+        </li>
 
-      <p><strong>2007–2011:</strong> Colegiul Tehnic Mihai Viteazu, Vulcan — Tehnician în Instalații Electrice și Automatizări</p>
-    </section>
+        <li class="timeline-item">
+          <div class="timeline-date">2011</div>
+          <p><strong>Barman</strong> — Arad</p>
+          <p>Prima experiență în servicii — comunicare, organizare, atenție la clienți.</p>
+        </li>
 
-    <section class="section">
-      <h2>Serviciu Militar — Septembrie 2025</h2>
-      <div class="military-badge">Soldat Gradat Profesionist — Batalionul Neagoe Basarab 26 Infanterie „Scorpionii Roșii”</div>
-      <p>Am participat la competițiile sportive pentru înrolarea în armată — și am fost admis. Am servit ca <strong>Soldat Gradat Profesionist</strong> la UM01047 Craiova, într-un batalion de infanterie cu tradiții puternice.</p>
-      <p>Din motive personale — pentru a susține fratele meu mai mic în începutul carierei militare (liceul militar) și pentru a fi alături de mama mea în momente grele — am luat decizia dificilă de a pune capăt serviciului activ.</p>
-      <p>Această experiență mi-a dat **disciplină, răbdare, capacitatea de a lua decizii grele cu responsabilitate** — și mi-a reafirmat valoarea familiei și a priorităților.</p>
-      <p>Acum sunt disponibil pentru o nouă experiență — unde pot aduce **integritate, loialitate și performanță**, exact cum am făcut în fiecare rol pe care l-am avut.</p>
+        <li class="timeline-item">
+          <div class="timeline-date">2007–2011</div>
+          <p><strong>Tehnician în Instalații Electrice și Automatizări</strong> — Colegiul Tehnic Mihai Viteazu, Vulcan</p>
+        </li>
+      </ul>
     </section>
 
     <section class="section">
