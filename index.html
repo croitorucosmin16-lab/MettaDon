@@ -12,6 +12,7 @@
       --text: #f1f5f9;
       --shadow: rgba(0, 0, 0, 0.7);
       --hover: #475569;
+      --glow: 0 0 15px rgba(96, 165, 250, 0.5);
     }
 
     * {
@@ -19,6 +20,7 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: all 0.3s ease;
     }
 
     body {
@@ -45,6 +47,18 @@
       margin-bottom: 40px;
       box-shadow: 0 8px 32px var(--shadow);
       backdrop-filter: blur(10px);
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .profile-pic {
@@ -54,24 +68,43 @@
       object-fit: cover;
       border: 3px solid var(--accent);
       margin-bottom: 20px;
-      box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+      box-shadow: var(--glow);
+      transition: transform 0.4s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05) rotate(5deg);
+      box-shadow: 0 0 25px rgba(96, 165, 250, 0.8);
     }
 
     h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
       color: var(--accent);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
 
     h2 {
       font-size: 1.8rem;
       margin: 30px 0 15px;
       color: var(--accent);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--accent);
+      margin-top: 10px;
+      border-radius: 3px;
     }
 
     p {
       margin-bottom: 15px;
       font-size: 1.1rem;
+      opacity: 0.95;
     }
 
     .section {
@@ -80,6 +113,25 @@
       border-radius: 15px;
       margin-bottom: 30px;
       box-shadow: 0 5px 20px var(--shadow);
+      animation: slideIn 0.8s ease-out;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .skills {
@@ -96,6 +148,13 @@
       border-radius: 20px;
       font-weight: bold;
       font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .skill-tag:hover {
+      background: #3b82f6;
+      transform: scale(1.1);
+      box-shadow: var(--glow);
     }
 
     .contact-info {
@@ -115,6 +174,7 @@
     .contact-link:hover {
       color: #93c5fd;
       transform: translateX(5px);
+      text-shadow: 0 0 5px rgba(96, 165, 250, 0.5);
     }
 
     .btn {
@@ -127,11 +187,37 @@
       font-weight: bold;
       margin-top: 20px;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(96, 165, 250, 0.3);
     }
 
     .btn:hover {
       background: #3b82f6;
-      transform: scale(1.05);
+      transform: scale(1.05) rotate(-2deg);
+      box-shadow: 0 6px 15px rgba(96, 165, 250, 0.5);
+    }
+
+    .military-badge {
+      background: linear-gradient(45deg, #dc2626, #991b1b);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      display: inline-block;
+      margin: 10px 0;
+      box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      text-align: center;
+      margin: 30px 0;
+      padding: 20px;
+      border-left: 4px solid var(--accent);
+      background: rgba(51, 65, 85, 0.3);
+      border-radius: 8px;
     }
 
     @media (max-width: 768px) {
@@ -183,6 +269,15 @@
     </section>
 
     <section class="section">
+      <h2>Serviciu Militar — Septembrie 2025</h2>
+      <div class="military-badge">Soldat Gradat Profesionist — Batalionul Neagoe Basarab 26 Infanterie „Scorpionii Roșii”</div>
+      <p>Am participat la competițiile sportive pentru înrolarea în armată — și am fost admis. Am servit ca <strong>Soldat Gradat Profesionist</strong> la UM01047 Craiova, într-un batalion de infanterie cu tradiții puternice.</p>
+      <p>Din motive personale — pentru a susține fratele meu mai mic în începutul carierei militare (liceul militar) și pentru a fi alături de mama mea în momente grele — am luat decizia dificilă de a pune capăt serviciului activ.</p>
+      <p>Această experiență mi-a dat **disciplină, răbdare, capacitatea de a lua decizii grele cu responsabilitate** — și mi-a reafirmat valoarea familiei și a priorităților.</p>
+      <p>Acum sunt disponibil pentru o nouă experiență — unde pot aduce **integritate, loialitate și performanță**, exact cum am făcut în fiecare rol pe care l-am avut.</p>
+    </section>
+
+    <section class="section">
       <h2>Skill-uri</h2>
       <div class="skills">
         <span class="skill-tag">Informatică (Excel, Windows)</span>
@@ -193,6 +288,8 @@
         <span class="skill-tag">Limbile: FR / ES / EN</span>
         <span class="skill-tag">Reziliență & Adaptabilitate</span>
         <span class="skill-tag">Echipă & Leadership</span>
+        <span class="skill-tag">Disciplină Militară</span>
+        <span class="skill-tag">Decizie sub presiune</span>
       </div>
     </section>
 
@@ -203,8 +300,29 @@
         <a href="tel:+40773894225" class="contact-link">📞 0773 894 225</a>
         <a href="https://github.com/croitorucosmin16-lab" target="_blank" class="contact-link">🌐 GitHub Profile</a>
       </div>
-      <p style="margin-top: 20px; font-style: italic;">„Nu am urcat pe podiumuri, dar am traversat terenuri grele — și am ieșit mai puternic.”</p>
+      <div class="quote">
+        „Nu am urcat pe podiumuri, dar am traversat terenuri grele — și am ieșit mai puternic. Ceea ce am învățat în fiecare job, în fiecare țară, în fiecare criză — îl aduc acum cu mine, ca valoare reală, nu ca poveste.”
+      </div>
     </section>
   </div>
+
+  <script>
+    // Animatii scroll reveal
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.section');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
 </body>
 </html>
