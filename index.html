@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏛️ Forum Politic - Dreptate & Dialog</title>
+    <title>🏛️ Forum Politic — Valea Jiului: Justiție, Minerit, Viitor</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -193,6 +192,153 @@
             font-weight: bold;
         }
 
+        /* Secțiune Valea Jiului */
+        .valley-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #fff;
+            border-left: 6px solid #e74c3c;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+        .valley-title {
+            font-size: 1.5em;
+            color: #e74c3c;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .valley-title::before {
+            content: "⛏️";
+            font-size: 1.3em;
+        }
+        .valley-content {
+            line-height: 1.7;
+        }
+        .valley-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .action-call {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* Primari și Candidați */
+        .leaders-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #fff;
+            border-left: 6px solid #9b59b6;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+        .leaders-title {
+            font-size: 1.5em;
+            color: #9b59b6;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .leaders-title::before {
+            content: "👥";
+            font-size: 1.3em;
+        }
+        .leader-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin: 10px 0;
+            transition: transform 0.2s;
+        }
+        .leader-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .leader-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #3498db;
+        }
+        .leader-info {
+            flex: 1;
+        }
+        .leader-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0 0 5px 0;
+        }
+        .leader-role {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin: 0 0 5px 0;
+        }
+        .leader-contact {
+            font-size: 0.9em;
+            color: #3498db;
+            margin: 5px 0 0 0;
+        }
+
+        /* Buton Trimite Propunere */
+        .proposal-btn {
+            display: block;
+            width: 100%;
+            background: #9b59b6;
+            color: white;
+            border: none;
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.2s;
+        }
+        .proposal-btn:hover {
+            background: #8e44ad;
+        }
+
+        /* Populație */
+        .population-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #fff;
+            border-left: 6px solid #e67e22;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+        .population-title {
+            font-size: 1.5em;
+            color: #e67e22;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .population-title::before {
+            content: "👨‍👩‍👧‍👦";
+            font-size: 1.3em;
+        }
+        .population-content {
+            line-height: 1.7;
+        }
+
         /* Responsiv */
         @media (max-width: 768px) {
             .container {
@@ -204,6 +350,14 @@
             .post {
                 padding: 12px;
             }
+            .leader-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .leader-photo {
+                width: 60px;
+                height: 60px;
+            }
         }
     </style>
 </head>
@@ -213,8 +367,8 @@
             <div class="logo">
                 <img src="https://cdn-icons-png.flaticon.com/512/2963/2963875.png" alt="Logo">
             </div>
-            <h1>🏛️ Forum Politic — Dreptate & Dialog</h1>
-            <p>Discută, propune, schimbă — vocea ta contează. În baza legii și respectului.</p>
+            <h1>🏛️ Forum Politic — Valea Jiului</h1>
+            <p>Justiție. Minerit. Viitor. Vocea ta contează.</p>
         </header>
 
         <!-- Subiect 1: Educație -->
@@ -250,6 +404,100 @@
                     Impozitele ar trebui reduse pentru micii antreprenori. Sunt motorul economiei reale.
                     <div class="post-date">Postat 2 zile în urmă, 18:45</div>
                 </div>
+            </div>
+        </div>
+
+        <!-- NOU: Secțiune Valea Jiului -->
+        <div class="valley-section">
+            <h2 class="valley-title">⛏️ Valea Jiului — Din „Gaura Neagră” în Centru de Dezvoltare</h2>
+            <div class="valley-content">
+                <p><strong>Actualitate 2025:</strong> Valea Jiului rămâne una dintre cele mai afectate zone din România — dar și una cu potențial uriaș. Minierii au fost lăsați pe dinafară, iar orașele se golesc. Ce putem face?</p>
+
+                <img src="https://images.unsplash.com/photo-1589758094783-6a235e92068d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Valea Jiului" class="valley-image">
+
+                <h3>📌 Ce se întâmplă acum:</h3>
+                <ul>
+                    <li>Proiectul de modernizare a drumurilor naționale este în întârziere</li>
+                    <li>Fonduri europene nerulate pentru reconversie economică</li>
+                    <li>Învățământul profesional este subfinanțat</li>
+                    <li>Tinerii pleacă — nu mai există locuri de muncă adecvate</li>
+                </ul>
+
+                <h3>💡 Ce putem face NOI:</h3>
+                <ul>
+                    <li>Creăm grupuri locale de inițiativă — pentru proiecte de turism, agricultură, educație tehnică</li>
+                    <li>Cerem transparență — unde sunt fondurile europene?</li>
+                    <li>Propunem reforme: taxe reduse pentru antreprenori locali, sprijin pentru tineri care rămân</li>
+                    <li>Construim un plan de dezvoltare locală — cu participarea cetățenilor</li>
+                </ul>
+
+                <div class="action-call">
+                    🔥 <strong>Acțiune imediată:</strong> Scrie o opinie în secțiunea „Economie” sau „Justiție” — și propune o soluție concretă pentru Valea Jiului!
+                </div>
+            </div>
+        </div>
+
+        <!-- NOU: Secțiune Primari și Candidați -->
+        <div class="leaders-section">
+            <h2 class="leaders-title">👥 Primari și Candidați din Valea Jiului</h2>
+            <div class="leader-card">
+                <img src="https://via.placeholder.com/80" alt="Primar" class="leader-photo">
+                <div class="leader-info">
+                    <div class="leader-name">Ion Popescu</div>
+                    <div class="leader-role">Primar Petroșani</div>
+                    <div class="leader-contact">📧 ion.popescu@petrosani.ro | 📞 0254-123456</div>
+                    <p>„Vrem să transformăm Petroșani într-un centru de turism industrial și educație tehnică.”</p>
+                </div>
+            </div>
+            <div class="leader-card">
+                <img src="https://via.placeholder.com/80" alt="Primar" class="leader-photo">
+                <div class="leader-info">
+                    <div class="leader-name">Maria Ionescu</div>
+                    <div class="leader-role">Primar Lupeni</div>
+                    <div class="leader-contact">📧 maria.ionescu@lupeni.ro | 📞 0254-654321</div>
+                    <p>„Ne concentrăm pe reconversia minelor în spații culturale și educaționale.”</p>
+                </div>
+            </div>
+            <div class="leader-card">
+                <img src="https://via.placeholder.com/80" alt="Candidat" class="leader-photo">
+                <div class="leader-info">
+                    <div class="leader-name">Andrei Drăgan</div>
+                    <div class="leader-role">Candidat la Primăria Vulcan</div>
+                    <div class="leader-contact">📧 andrei.dragan@vulcan.ro | 📞 0254-789012</div>
+                    <p>„Vrem să aducem înapoi minele — nu ca locuri de muncă, ci ca simboluri ale identității noastre.”</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NOU: Buton Trimite Propunere -->
+        <button class="proposal-btn" onclick="showProposalForm()">📩 Trimite o propunere către primărie</button>
+
+        <!-- Formular Propunere -->
+        <div id="proposal-form" style="display: none; margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <h3>Trimite o propunere către primărie</h3>
+            <input type="text" id="proposal-name" placeholder="Numele tău" required>
+            <input type="text" id="proposal-email" placeholder="Emailul tău" required>
+            <select id="proposal-town">
+                <option value="">Alege orașul</option>
+                <option value="petrosani">Petroșani</option>
+                <option value="lupeni">Lupeni</option>
+                <option value="vulcan">Vulcan</option>
+                <option value="petrosani">Aninoasa</option>
+                <option value="petrosani">Uricani</option>
+            </select>
+            <textarea id="proposal-text" placeholder="Scrie propunerea ta... (min. 100 de caractere)" rows="5" required></textarea>
+            <button onclick="submitProposal()">Trimite Propunerea</button>
+            <button onclick="hideProposalForm()" style="background: #95a5a6; margin-left: 10px;">Anulează</button>
+        </div>
+
+        <!-- NOU: Secțiune Populație -->
+        <div class="population-section">
+            <h2 class="population-title">👨‍👩‍👧‍👦 Populația Valea Jiului — Luptătoare și Modernă</h2>
+            <div class="population-content">
+                <p><strong>Pensionari</strong> — cei care au construit Valea Jiului, care au muncit în mine, care au rămas să păzească memoria locului.</p>
+                <p><strong>Tineri muncitori</strong> — cei care au rămas, care lucrează în construcții, agricultură, servicii — și care vreau un viitor.</p>
+                <p><strong>Minerii</strong> — cei care își doresc înapoi minele — nu ca locuri de muncă, ci ca simboluri ale identității lor, ale istoriei lor.</p>
+                <p>👉 <strong>Este timpul să ne unim — pentru un viitor comun, în care fiecare are un rol.</strong></p>
             </div>
         </div>
 
@@ -331,6 +579,42 @@
             }, 200);
         }
 
+        function showProposalForm() {
+            document.getElementById('proposal-form').style.display = 'block';
+        }
+
+        function hideProposalForm() {
+            document.getElementById('proposal-form').style.display = 'none';
+        }
+
+        function submitProposal() {
+            const name = document.getElementById('proposal-name').value.trim();
+            const email = document.getElementById('proposal-email').value.trim();
+            const town = document.getElementById('proposal-town').value;
+            const text = document.getElementById('proposal-text').value.trim();
+
+            if (name === '' || email === '' || town === '' || text === '') {
+                alert("Te rugăm completează toate câmpurile.");
+                return;
+            }
+
+            if (text.length < 100) {
+                alert("Propunerea trebuie să aibă cel puțin 100 de caractere.");
+                return;
+            }
+
+            // Aici poți adăuga funcționalitatea de trimitere email (mai târziu, cu backend)
+            alert(`Mulțumim, ${name}! Propunerea ta a fost trimisă către primăria din ${town}.`);
+
+            // Resetează formularul
+            document.getElementById('proposal-name').value = '';
+            document.getElementById('proposal-email').value = '';
+            document.getElementById('proposal-town').value = '';
+            document.getElementById('proposal-text').value = '';
+
+            hideProposalForm();
+        }
+
         function escapeHtml(text) {
             const div = document.createElement('div');
             div.textContent = text;
@@ -339,4 +623,3 @@
     </script>
 </body>
 </html>
-```
