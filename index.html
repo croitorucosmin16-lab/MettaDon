@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏛️ Forum Politic — Ciobanu Alexandru & Viitorul Valea Jiului</title>
+    <title>🏛️ Forum Politic — Ciobanu Alexandru, Avocatul Poporului Minier</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -192,154 +192,7 @@
             font-weight: bold;
         }
 
-        /* Secțiune Valea Jiului */
-        .valley-section {
-            margin: 30px 0;
-            padding: 25px;
-            background: #fff;
-            border-left: 6px solid #e74c3c;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        }
-        .valley-title {
-            font-size: 1.5em;
-            color: #e74c3c;
-            margin: 0 0 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .valley-title::before {
-            content: "⛏️";
-            font-size: 1.3em;
-        }
-        .valley-content {
-            line-height: 1.7;
-        }
-        .valley-image {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin: 15px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .action-call {
-            background: #f8f9fa;
-            padding: 15px;
-            border-left: 4px solid #3498db;
-            border-radius: 8px;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        /* Primari și Candidați */
-        .leaders-section {
-            margin: 30px 0;
-            padding: 25px;
-            background: #fff;
-            border-left: 6px solid #9b59b6;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        }
-        .leaders-title {
-            font-size: 1.5em;
-            color: #9b59b6;
-            margin: 0 0 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .leaders-title::before {
-            content: "👥";
-            font-size: 1.3em;
-        }
-        .leader-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            margin: 10px 0;
-            transition: transform 0.2s;
-        }
-        .leader-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .leader-photo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #3498db;
-        }
-        .leader-info {
-            flex: 1;
-        }
-        .leader-name {
-            font-weight: bold;
-            color: #2c3e50;
-            margin: 0 0 5px 0;
-        }
-        .leader-role {
-            font-size: 0.9em;
-            color: #7f8c8d;
-            margin: 0 0 5px 0;
-        }
-        .leader-contact {
-            font-size: 0.9em;
-            color: #3498db;
-            margin: 5px 0 0 0;
-        }
-
-        /* Buton Trimite Propunere */
-        .proposal-btn {
-            display: block;
-            width: 100%;
-            background: #9b59b6;
-            color: white;
-            border: none;
-            padding: 12px;
-            margin: 20px 0;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            text-align: center;
-            transition: background 0.2s;
-        }
-        .proposal-btn:hover {
-            background: #8e44ad;
-        }
-
-        /* Populație */
-        .population-section {
-            margin: 30px 0;
-            padding: 25px;
-            background: #fff;
-            border-left: 6px solid #e67e22;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        }
-        .population-title {
-            font-size: 1.5em;
-            color: #e67e22;
-            margin: 0 0 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .population-title::before {
-            content: "👨‍👩‍👧‍👦";
-            font-size: 1.3em;
-        }
-        .population-content {
-            line-height: 1.7;
-        }
-
-        /* Articol Ciobanu Alexandru */
+        /* Secțiune Ciobanu Alexandru — Avocatul Poporului Minier */
         .ciobanu-section {
             margin: 30px 0;
             padding: 25px;
@@ -371,6 +224,17 @@
         .ciobanu-content {
             line-height: 1.7;
         }
+        .ciobanu-personality {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #27ae60;
+        }
+        .ciobanu-personality h3 {
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+        }
 
         /* Fundal Justitie */
         .justice-bg {
@@ -400,14 +264,6 @@
             .post {
                 padding: 12px;
             }
-            .leader-card {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .leader-photo {
-                width: 60px;
-                height: 60px;
-            }
         }
     </style>
 </head>
@@ -417,9 +273,36 @@
             <div class="logo">
                 <img src="https://cdn-icons-png.flaticon.com/512/2963/2963875.png" alt="Logo">
             </div>
-            <h1>🏛️ Forum Politic — Ciobanu Alexandru & Viitorul Valea Jiului</h1>
+            <h1>🏛️ Forum Politic — Ciobanu Alexandru, Avocatul Poporului Minier</h1>
             <p>Justiție. Minerit. Viitor. Vocea ta contează.</p>
         </header>
+
+        <!-- NOU: Secțiune Ciobanu Alexandru — Avocatul Poporului Minier -->
+        <div class="ciobanu-section">
+            <h2 class="ciobanu-title">⚖️ Ciobanu Alexandru — Avocatul Poporului Minier</h2>
+            <div class="ciobanu-content">
+                <p><strong>Ciobanu Alexandru</strong> nu este doar un avocat — este un simbol al justiției pentru cei care au fost lăsați pe dinafară. Este „Avocatul poporului minier” — cel care stă alături de pensionari, de tineri, de mineri care își doresc înapoi minele.</p>
+
+                <img src="https://via.placeholder.com/800x400?text=Ciobanu+Alexandru+-+Avocatul+Poporului+Minier" alt="Ciobanu Alexandru" class="ciobanu-image">
+
+                <div class="ciobanu-personality">
+                    <h3>🌟 Personalitatea lui Ciobanu Alexandru</h3>
+                    <p><strong>Tânăr, dar cu rădăcini adânci în Valea Jiului.</strong> Nu a plecat — a rămas să lupte. Are o energie rară: nu se teme de bătălii politice, nu se teme de conduceri corupte, nu se teme de sistemul care vrea să-l mute.</p>
+                    <p><strong>Curajos, dar nu agresiv.</strong> Vorbește cu calm, dar cu putere. Nu are nevoie de ură — are nevoie de justiție. Ia decizii bazate pe fapte, nu pe emoții.</p>
+                    <p><strong>Just, dar nu naiv.</strong> Știe că nu poți schimba totul peste noapte — dar știe că poți începe cu un pas. Cu un proiect. Cu o propunere. Cu o voce.</p>
+                    <p><strong>Luptător, dar nu singur.</strong> Crede în comunitate — în cei care vor să rămână, în cei care vor să construiască, în cei care vor să redea viață zonei.</p>
+                </div>
+
+                <div class="justice-bg">
+                    <h3>⚖️ Fundal de Justiție — Procesul Politic Simbolic</h3>
+                    <p>Imaginea de fundal reprezintă un moment istoric — procesul care a dus la schimbarea unei conduceri corupte. Exact asta vrem și noi: ca justiția să prevaleze, iar cei care fură banii publici să fie dați jos.</p>
+                </div>
+
+                <div class="action-call">
+                    🔥 <strong>Acțiune imediată:</strong> Sprijină-l pe Ciobanu Alexandru — el este vocea noastră! Scrie o opinie în secțiunea „Justiție” sau „Economie” — și propune o soluție concretă pentru Vulcan!
+                </div>
+            </div>
+        </div>
 
         <!-- Subiect 1: Educație -->
         <div class="topic-card" id="topic-edu">
@@ -453,31 +336,6 @@
                     <div class="post-author">Elena Georgescu <button class="like-btn" onclick="likePost(this)">👍 <span class="like-count">0</span></button></div>
                     Impozitele ar trebui reduse pentru micii antreprenori. Sunt motorul economiei reale.
                     <div class="post-date">Postat 2 zile în urmă, 18:45</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- NOU: Articol Ciobanu Alexandru -->
-        <div class="ciobanu-section">
-            <h2 class="ciobanu-title">⚖️ Ciobanu Alexandru — Avocat, Tânăr, Viitor Primar al Vulcanului</h2>
-            <div class="ciobanu-content">
-                <p><strong>Ciobanu Alexandru</strong> este unul dintre cei mai promițători tineri din Valea Jiului — avocat, cu o carieră construită pe principii de justiție, integritate și respect pentru lege.</p>
-
-                <img src="https://via.placeholder.com/800x400?text=Ciobanu+Alexandru+-+Viitor+Primar+Vulcan" alt="Ciobanu Alexandru" class="ciobanu-image">
-
-                <h3>Caracter și Dorințe Puternice</h3>
-                <p>Alexandru a demonstrat încă de la început că nu se teme de bătălii politice — chiar dacă sunt grele. A dat dovadă de putere în politica locală, prin propuneri concrete, transparență și implicare directă în problemele comunității.</p>
-
-                <h3>Susținut și cu Șanse Reale</h3>
-                <p>Este susținut de o parte din populația locală, dar și de organizații civice care cred în schimbare. Are șanse reale să câștige alegerile — nu doar pentru că are idei, ci pentru că are curaj.</p>
-
-                <div class="justice-bg">
-                    <h3>⚖️ Fundal de Justiție — Procesul Politic Simbolic</h3>
-                    <p>Imaginea de fundal reprezintă un moment istoric — procesul care a dus la schimbarea unei conduceri corupte. Exact asta vrem și noi: ca justiția să prevaleze, iar cei care fură banii publici să fie dați jos.</p>
-                </div>
-
-                <div class="action-call">
-                    🔥 <strong>Acțiune imediată:</strong> Sprijină-l pe Ciobanu Alexandru — scrie o opinie în secțiunea „Justiție” sau „Economie” — și propune o soluție concretă pentru Vulcan!
                 </div>
             </div>
         </div>
