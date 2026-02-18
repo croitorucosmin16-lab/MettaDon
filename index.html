@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Croitoru Cosmin | Profil Profesional</title>
+  <title>Croitoru Cosmin | Book of Life</title>
   <style>
     :root {
-      --primary: #1e293b;
-      --secondary: #334155;
+      --primary: #0f172a;
+      --secondary: #1e293b;
       --accent: #60a5fa;
       --text: #f1f5f9;
-      --shadow: rgba(0, 0, 0, 0.7);
-      --hover: #475569;
-      --glow: 0 0 15px rgba(96, 165, 250, 0.5);
-      --border: 1px solid rgba(96, 165, 250, 0.3);
+      --shadow: rgba(0, 0, 0, 0.8);
+      --hover: #334155;
+      --glow: 0 0 20px rgba(96, 165, 250, 0.4);
+      --border: 1px solid rgba(96, 165, 250, 0.2);
+      --bg-gradient: linear-gradient(135deg, #0f172a, #1e293b);
     }
 
     * {
@@ -25,7 +26,7 @@
     }
 
     body {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: var(--bg-gradient);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
@@ -43,12 +44,26 @@
     .header {
       text-align: center;
       padding: 40px 20px;
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 15px;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 20px;
       margin-bottom: 40px;
-      box-shadow: 0 8px 32px var(--shadow);
-      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 40px var(--shadow);
+      backdrop-filter: blur(15px);
       animation: fadeInUp 1s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent, rgba(96, 165, 250, 0.05));
+      z-index: -1;
+      border-radius: 20px;
     }
 
     .name {
@@ -56,9 +71,10 @@
       font-weight: 300;
       letter-spacing: 2px;
       color: var(--accent);
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
       position: relative;
       display: inline-block;
+      z-index: 2;
     }
 
     .name::after {
@@ -69,6 +85,7 @@
       background: var(--accent);
       margin: 15px auto;
       border-radius: 3px;
+      box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
     }
 
     .tagline {
@@ -76,6 +93,7 @@
       color: #cbd5e1;
       margin-top: 10px;
       font-style: italic;
+      opacity: 0.9;
     }
 
     .profile-pic {
@@ -86,12 +104,14 @@
       border: 2px solid var(--accent);
       margin: 20px auto;
       box-shadow: var(--glow);
-      transition: transform 0.4s ease;
+      transition: transform 0.4s ease, filter 0.4s ease;
+      filter: brightness(0.95);
     }
 
     .profile-pic:hover {
-      transform: scale(1.05) rotate(5deg);
-      box-shadow: 0 0 25px rgba(96, 165, 250, 0.8);
+      transform: scale(1.05) rotate(3deg);
+      filter: brightness(1.1) saturate(1.2);
+      box-shadow: 0 0 30px rgba(96, 165, 250, 0.6);
     }
 
     .contact-bar {
@@ -101,6 +121,8 @@
       margin-top: 15px;
       flex-wrap: wrap;
       font-size: 0.9rem;
+      z-index: 2;
+      position: relative;
     }
 
     .contact-item {
@@ -108,10 +130,15 @@
       text-decoration: none;
       font-weight: bold;
       transition: all 0.3s ease;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: rgba(96, 165, 250, 0.1);
     }
 
     .contact-item:hover {
       color: #93c5fd;
+      background: rgba(96, 165, 250, 0.2);
+      transform: translateY(-2px);
       text-shadow: 0 0 5px rgba(96, 165, 250, 0.5);
     }
 
@@ -121,6 +148,7 @@
       color: var(--accent);
       position: relative;
       text-align: center;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
 
     h2::after {
@@ -131,12 +159,14 @@
       background: var(--accent);
       margin: 10px auto;
       border-radius: 3px;
+      box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
     }
 
     p {
       margin-bottom: 15px;
       font-size: 1.1rem;
       opacity: 0.95;
+      line-height: 1.7;
     }
 
     .section {
@@ -148,6 +178,20 @@
       animation: slideIn 0.8s ease-out;
       opacity: 0;
       transform: translateY(20px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent, rgba(96, 165, 250, 0.03));
+      z-index: -1;
+      border-radius: 15px;
     }
 
     .section.visible {
@@ -178,18 +222,38 @@
       border-radius: 10px;
       margin-bottom: 20px;
       border-left: 4px solid var(--accent);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent, rgba(96, 165, 250, 0.05));
+      z-index: -1;
+      border-radius: 10px;
     }
 
     .timeline-item:hover {
       transform: translateX(5px);
       background: rgba(51, 65, 85, 0.5);
+      box-shadow: 0 5px 15px rgba(96, 165, 250, 0.2);
     }
 
     .timeline-date {
       font-weight: bold;
       color: var(--accent);
       font-size: 1.1rem;
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(96, 165, 250, 0.1);
+      border-radius: 15px;
+      margin-right: 10px;
     }
 
     .skills {
@@ -207,12 +271,13 @@
       font-weight: bold;
       font-size: 0.9rem;
       transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(96, 165, 250, 0.2);
     }
 
     .skill-tag:hover {
       background: #3b82f6;
-      transform: scale(1.1);
-      box-shadow: var(--glow);
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
     }
 
     .quote {
@@ -225,6 +290,43 @@
       border-left: 4px solid var(--accent);
       background: rgba(51, 65, 85, 0.3);
       border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      font-size: 3rem;
+      color: rgba(96, 165, 250, 0.3);
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .book-intro {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      padding: 20px;
+      background: rgba(51, 65, 85, 0.2);
+      border-radius: 15px;
+      border-left: 4px solid var(--accent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .book-intro::before {
+      content: '📖';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 1.5rem;
+      color: var(--accent);
+      opacity: 0.7;
     }
 
     @media (max-width: 768px) {
@@ -237,6 +339,10 @@
       .contact-bar {
         flex-direction: column;
         align-items: center;
+      }
+      .book-intro {
+        font-size: 1.1rem;
+        padding: 15px;
       }
     }
   </style>
@@ -257,23 +363,25 @@
     </div>
 
     <section class="section">
-      <h2>Introducere</h2>
-      <p>„Nu am urcat pe podiumuri — dar am traversat terenuri grele. De la Vulcan la Paris, de la abator la armată, de la marketing la securitate — fiecare pas a fost o lecție de caracter. Nu caut să fiu văzut — ci să fiu înțeles. Nu doresc să impresionez — ci să aduc valoare.”</p>
+      <h2>Book of Life</h2>
+      <div class="book-intro">
+        Aceasta nu e o listă de joburi — e o carte de viață. Fiecare capitol, un teren greu traversat. Fiecare paragraf, o lecție învățată. Nu am urcat pe podiumuri — dar am trecut prin foc, gheață și furtuni. Și am ieșit mai puternic. Aici vei găsi nu doar ce am făcut — ci cum am crescut, ce am învățat, și ce pot aduce azi.
+      </div>
     </section>
 
     <section class="section">
       <h2>Viața ca o poveste de performanță</h2>
       <ul class="timeline">
         <li class="timeline-item">
-          <div class="timeline-date">Martie 2025 – Septembrie 2025</div>
-          <p><strong>Marketing & Promovare Evenimente</strong> — Artsma Invest S.R.L, Radio România, Tattoo.TV (București)</p>
-          <p>Am creat experiențe vizuale și sonore — operator foto/video, podcasturi cu influenceri naționali, promovare afaceri. Am învățat că comunicarea nu e doar vorbe — e energie, timing și impact.</p>
-        </li>
-
-        <li class="timeline-item">
           <div class="timeline-date">Septembrie 2025 – Ianuarie 2026</div>
           <p><strong>Soldat Gradat Profesionist</strong> — Batalionul Neagoe Basarab 26 Infanterie „Scorpionii Roșii”, Craiova</p>
           <p>Admis după competiții sportive. Am luat decizia dificilă de a pune capăt serviciului activ pentru a susține fratele meu mai mic în începutul carierei militare și pentru a fi alături de mama mea în momente grele. Acest timp mi-a dat disciplină, răbdare și capacitatea de a lua decizii grele cu responsabilitate.</p>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-date">Martie 2025 – Septembrie 2025</div>
+          <p><strong>Marketing & Promovare Evenimente</strong> — Artsma Invest S.R.L, Radio România, Tattoo.TV (București)</p>
+          <p>Am creat experiențe vizuale și sonore — operator foto/video, podcasturi cu influenceri naționali, promovare afaceri. Am învățat că comunicarea nu e doar vorbe — e energie, timing și impact.</p>
         </li>
 
         <li class="timeline-item">
